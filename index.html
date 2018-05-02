@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600" rel="stylesheet">
+      <style>
+         .algolia-autocomplete {
+         width: 100%;
+         }
+         .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+         width: 100%;
+         }
+         .algolia-autocomplete .aa-hint {
+         color: #999;
+         }
+         .algolia-autocomplete .aa-dropdown-menu {
+         width: 100%;
+         background-color: #fff;
+         border: 1px solid #999;
+         border-top: none;
+         }
+         .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+         cursor: pointer;
+         padding: 5px 4px;
+         }
+         .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+         background-color: #B2D7FF;
+         }
+         .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+         font-weight: bold;
+         font-style: normal;
+         }
+         .padding-top {
+         padding: 10px 10px 0 10px;
+         }
+         .padding-inside {
+         padding: 0 15px;
+         }
+         .font {
+         font-family: 'Work Sans', sans-serif;
+         }
+         .bold {
+         font-weight: 600;
+         }
+         .margin {
+         margin-top:50px;
+         }
+         .result-title-tag, .result-title-tag-blog, .result-title-tag-eco {
+         background-color: #f3f3f3;
+         color: #8995c7;
+         padding: 0 4px;
+         font-size: 12px;
+         margin-right: 8px;
+         margin-top: 2px;
+         white-space: wrap;
+         height: 19px;
+         width: 100px;
+         border-radius: 4px;
+         margin: 10px
+         }
+         .result-title-tag {
+         height: 19px;
+         width: 100px;
+         }
+         .result-title-tag-blog {
+         height: 19px;
+         width: 33px;
+         }
+         .result-title-tag-eco {
+         height: 19px;
+         width: 71px;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+               <form action="#" class="form">
+                  <h3 class="font margin">Contentful + Algolia Example</h3>
+                  <br>
+                  <input class="form-control font" id="search-input" name="contacts" type="text" placeholder='Search for anything.' />
+               </form>
+            </div>
+         </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+      <script>
+      var client = algoliasearch('CHC21NM3YD', '5f124a0b5a6d1506b6d897408d111085');
+var index = client.initIndex('Marketing website');
+autocomplete('#search-input', { hint: false }, [
+  {
+    source: autocomplete.sources.hits(index, { hitsPerPage: 10 }),
+    displayKey: 'title',
+    templates: {
+      suggestion: function(suggestion) {
+        if (suggestion.categoryTag === 'Knowledgebase') {
+          return (
+            '<div class="text-uppercase padding-top font bold"><a href="' +
+            suggestion.url +
+            '" target="_blank">' +
+            suggestion.title +
+            '</a></div><div class="padding-inside text-muted font">' +
+            suggestion._highlightResult.teaser.value +
+            '</div><div class="result-title-tag font">' +
+            suggestion.categoryTag +
+            '</div>'
+          );
+        }
+        if (suggestion.categoryTag === 'Blog') {
+          return (
+            '<div class="text-uppercase padding-top font bold"><a href="' +
+            suggestion.url +
+            '" target="_blank">' +
+            suggestion.title +
+            '</a></div><div class="padding-inside text-muted font">' +
+            suggestion._highlightResult.teaser.value +
+            '</div><div class="result-title-tag-blog font">' +
+            suggestion.categoryTag +
+            '</div>'
+          );
+        }
+        if (suggestion.categoryTag === 'Ecosystem') {
+          return (
+            '<div class="text-uppercase padding-top font bold"><a href="' +
+            suggestion.url +
+            '" target="_blank">' +
+            suggestion.title +
+            '</a></div><div class="padding-inside text-muted font">' +
+            suggestion._highlightResult.teaser.value +
+            '</div><div class="result-title-tag-eco font">' +
+            suggestion.categoryTag +
+            '</div>'
+          );
+        }
+      }
+    }
+  }
+]).on('autocomplete:selected', function(event, suggestion, dataset) {
+  console.log(suggestion, dataset);
+  console.log(suggestion.categoryTag);
+  //   // alert('dataset: ' + dataset + ', ' + suggestion.title);
+});
+</script>
+   </body>
+</html>
