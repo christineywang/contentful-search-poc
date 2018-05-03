@@ -45,7 +45,7 @@
          .margin {
          margin-top:50px;
          }
-         .result-title-tag, .result-title-tag-blog, .result-title-tag-eco {
+         .result-title-tag, .result-title-tag-blog, .result-title-tag-eco, .result-title-tag-event {
          background-color: #f3f3f3;
          color: #8995c7;
          padding: 0 4px;
@@ -69,6 +69,10 @@
          .result-title-tag-eco {
          height: 19px;
          width: 71px;
+         }
+         .result-title-tag-event {
+         height: 19px;
+         Width: 41px;  
          }
       </style>
    </head>
@@ -130,6 +134,19 @@ autocomplete('#search-input', { hint: false }, [
             '</a></div><div class="padding-inside text-muted font">' +
             suggestion._highlightResult.teaser.value +
             '</div><div class="result-title-tag-eco font">' +
+            suggestion.categoryTag +
+            '</div>'
+          );
+        }
+        if (suggestion.categoryTag === 'Event') {
+          return (
+            '<div class="text-uppercase padding-top font bold"><a href="' +
+            suggestion.url +
+            '" target="_blank">' +
+            suggestion.title +
+            '</a></div><div class="padding-inside text-muted font">' +
+            suggestion._highlightResult.teaser.value +
+            '</div><div class="result-title-tag-event font">' +
             suggestion.categoryTag +
             '</div>'
           );
