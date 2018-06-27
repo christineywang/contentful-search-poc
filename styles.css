@@ -1,0 +1,92 @@
+.algolia-autocomplete {
+  width: 120%;
+}
+.algolia-autocomplete .aa-input,
+.algolia-autocomplete .aa-hint {
+  width: 120%;
+}
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 120%;
+  background-color: #fff;
+  border: 1px solid #999;
+  border-top: none;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 5px 4px;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #b2d7ff;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+.padding-top {
+  padding: 10px 10px 0 10px;
+}
+.padding-inside {
+  padding: 0 15px;
+}
+.font {
+  font-family: 'Work Sans', sans-serif;
+}
+.bold {
+  font-weight: 600;
+}
+.margin {
+  margin-top: 50px;
+}
+.result-title-tag,
+.result-title-tag-blog,
+.result-title-tag-eco,
+.result-title-tag-event,
+.result-title-tag-faq,
+.result-title-tag-case,
+.result-title-tag-docs,
+.result-title-tag-customer,
+.result-title-tag-partner,
+.result-title-tag-priceFaq {
+  background-color: #f3f3f3;
+  color: #8995c7;
+  padding: 0 4px;
+  font-size: 12px;
+  margin-top: 2px;
+  white-space: nowrap;
+  height: 19px;
+  border-radius: 4px;
+  margin: 10px;
+}
+.result-title-tag {
+  width: 100px;
+}
+.result-title-tag-blog {
+  width: 33px;
+}
+.result-title-tag-eco {
+  width: 71px;
+}
+.result-title-tag-event {
+  width: 41px;
+}
+.result-title-tag-faq {
+  width: 31px;
+}
+.result-title-tag-case {
+  width: 74px;
+}
+.result-title-tag-docs {
+  width: 37px;
+}
+.result-title-tag-customer {
+  width: 65px;
+}
+.result-title-tag-partner {
+  width: 52px;
+}
+.result-title-tag-priceFaq {
+  width: 77px;
+}
