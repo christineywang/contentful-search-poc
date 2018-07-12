@@ -1,7 +1,7 @@
-const client = algoliasearch('CHC21NM3YD', '5f124a0b5a6d1506b6d897408d111085');
+const client = algoliasearch('CHC21NM3YD', 'ed25ab900a66ade634f78b1a42440cd1');
 const index = client.initIndex('Marketing website');
 
-autocomplete('#search-input', { hint: true }, [
+autocomplete('#search-input', { hint: false }, [
   {
     source: autocomplete.sources.hits(index, { hitsPerPage: 10 }),
     displayKey: 'title',
@@ -10,11 +10,9 @@ autocomplete('#search-input', { hint: true }, [
         if (suggestion.title) {
           if (suggestion.categoryTag === 'Knowledgebase') {
             return (
-              '<div class="text-uppercase padding-top font bold"><a href="' +
-              suggestion.url +
-              '" target="_blank">' +
+              '<div class="text-uppercase padding-top font bold">' +
               suggestion.title +
-              '</a></div><div class="padding-inside text-muted font">' +
+              '</div><div class="padding-inside text-muted font">' +
               suggestion._highlightResult.teaser.value +
               '</div><div class="result-title-tag font">' +
               suggestion.categoryTag +
@@ -23,11 +21,9 @@ autocomplete('#search-input', { hint: true }, [
           }
           if (suggestion.categoryTag === 'Blog') {
             return (
-              '<div class="text-uppercase padding-top font bold"><a href="' +
-              suggestion.url +
-              '" target="_blank">' +
+              '<div class="text-uppercase padding-top font bold">' +
               suggestion.title +
-              '</a></div><div class="padding-inside text-muted font">' +
+              '</div><div class="padding-inside text-muted font">' +
               suggestion._highlightResult.teaser.value +
               '</div><div class="result-title-tag-blog font">' +
               suggestion.categoryTag +
@@ -36,11 +32,9 @@ autocomplete('#search-input', { hint: true }, [
           }
           if (suggestion.categoryTag === 'Ecosystem') {
             return (
-              '<div class="text-uppercase padding-top font bold"><a href="' +
-              suggestion.url +
-              '" target="_blank">' +
+              '<div class="text-uppercase padding-top font bold">' +
               suggestion.title +
-              '</a></div><div class="padding-inside text-muted font">' +
+              '</div><div class="padding-inside text-muted font">' +
               suggestion._highlightResult.teaser.value +
               '</div><div class="result-title-tag-eco font">' +
               suggestion.categoryTag +
@@ -49,11 +43,9 @@ autocomplete('#search-input', { hint: true }, [
           }
           if (suggestion.categoryTag === 'Event') {
             return (
-              '<div class="text-uppercase padding-top font bold"><a href="' +
-              suggestion.url +
-              '" target="_blank">' +
+              '<div class="text-uppercase padding-top font bold">' +
               suggestion.title +
-              '</a></div><div class="padding-inside text-muted font">' +
+              '</div><div class="padding-inside text-muted font">' +
               suggestion._highlightResult.teaser.value +
               '</div><div class="result-title-tag-event font">' +
               suggestion.categoryTag +
@@ -62,11 +54,9 @@ autocomplete('#search-input', { hint: true }, [
           }
           if (suggestion.categoryTag === 'FAQ') {
             return (
-              '<div class="text-uppercase padding-top font bold"><a href="' +
-              suggestion.url +
-              '" target="_blank">' +
+              '<div class="text-uppercase padding-top font bold">' +
               suggestion.title +
-              '</a></div><div class="padding-inside text-muted font">' +
+              '</div><div class="padding-inside text-muted font">' +
               suggestion._highlightResult.teaser.value +
               '</div><div class="result-title-tag-faq font">' +
               suggestion.categoryTag +
@@ -75,11 +65,9 @@ autocomplete('#search-input', { hint: true }, [
           }
           if (suggestion.categoryTag === 'Case study') {
             return (
-              '<div class="text-uppercase padding-top font bold"><a href="' +
-              suggestion.url +
-              '" target="_blank">' +
+              '<div class="text-uppercase padding-top font bold">' +
               suggestion.title +
-              '</a></div><div class="padding-inside text-muted font">' +
+              '</div><div class="padding-inside text-muted font">' +
               suggestion._highlightResult.teaser.value +
               '</div><div class="result-title-tag-case font">' +
               suggestion.categoryTag +
@@ -88,11 +76,9 @@ autocomplete('#search-input', { hint: true }, [
           }
           if (suggestion.categoryTag === 'Docs') {
             return (
-              '<div class="text-uppercase padding-top font bold"><a href="' +
-              suggestion.url +
-              '" target="_blank">' +
+              '<div class="text-uppercase padding-top font bold">' +
               suggestion.title +
-              '</a></div><div class="padding-inside text-muted font">' +
+              '</div><div class="padding-inside text-muted font">' +
               suggestion._highlightResult.teaser.value +
               '</div><div class="result-title-tag-docs font">' +
               suggestion.categoryTag +
@@ -101,11 +87,9 @@ autocomplete('#search-input', { hint: true }, [
           }
           if (suggestion.categoryTag === 'Customer') {
             return (
-              '<div class="text-uppercase padding-top font bold"><a href="' +
-              suggestion.url +
-              '" target="_blank">' +
+              '<div class="text-uppercase padding-top font bold">' +
               suggestion.title +
-              '</a></div><div class="padding-inside text-muted font">' +
+              '</div><div class="padding-inside text-muted font">' +
               suggestion._highlightResult.teaser.value +
               '</div><div class="result-title-tag-customer font">' +
               suggestion.categoryTag +
@@ -114,11 +98,9 @@ autocomplete('#search-input', { hint: true }, [
           }
           if (suggestion.categoryTag === 'Partner') {
             return (
-              '<div class="text-uppercase padding-top font bold"><a href="' +
-              suggestion.url +
-              '" target="_blank">' +
+              '<div class="text-uppercase padding-top font bold">' +
               suggestion.title +
-              '</a></div><div class="padding-inside text-muted font">' +
+              '</div><div class="padding-inside text-muted font">' +
               suggestion._highlightResult.teaser.value +
               '</div><div class="result-title-tag-partner font">' +
               suggestion.categoryTag +
@@ -127,9 +109,7 @@ autocomplete('#search-input', { hint: true }, [
           }
           if (suggestion.categoryTag === 'Pricing FAQ') {
             return (
-              '<div class="text-uppercase padding-top font bold"><a href="' +
-              suggestion.url +
-              '" target="_blank">' +
+              '<div class="text-uppercase padding-top font bold">' +
               suggestion.title +
               '</a></div><div class="padding-inside text-muted font">' +
               suggestion._highlightResult.teaser.value +
@@ -142,7 +122,9 @@ autocomplete('#search-input', { hint: true }, [
       }
     }
   }
-]).on('autocomplete:selected', function(event, suggestion, dataset) {
-  console.log(suggestion, dataset);
-  console.log(suggestion.categoryTag);
+]).on('autocomplete:selected', function(event, suggestion) {
+  const url = suggestion.url;
+  window.open(url, '_blank');
+  // console.log(suggestion, dataset);
+  // console.log(suggestion.url);
 });

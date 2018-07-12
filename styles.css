@@ -1,15 +1,15 @@
 .algolia-autocomplete {
-  width: 120%;
+  width: 100%;
 }
 .algolia-autocomplete .aa-input,
 .algolia-autocomplete .aa-hint {
-  width: 120%;
+  width: 100%;
 }
 .algolia-autocomplete .aa-hint {
   color: #999;
 }
 .algolia-autocomplete .aa-dropdown-menu {
-  width: 120%;
+  width: 100%;
   background-color: #fff;
   border: 1px solid #999;
   border-top: none;
@@ -89,4 +89,8 @@
 }
 .result-title-tag-priceFaq {
   width: 77px;
+}
+
+.text-muted {
+  text-decoration: none;
 }
